@@ -6,11 +6,14 @@ contract Gascoin {
     string public name;
     uint256 public priceGas;
     string public symbol;
+    string public GSname;
+    bool public GS_Active;
     uint8 public decimals;
     uint256 public totalSupply;
     address public owner;
     int256 public value256;
     uint[] public myArray;
+    string[] public GSnetwork_names; 
     address[] User_addresses;
     address[] GSnetwork_addresses;
     
@@ -53,8 +56,9 @@ contract Gascoin {
         }
 
     /* Registration of new GS*/
-    function new_GS(address newGSAddress_) {
+    function new_GS(address newGSAddress_, string GASname) {
             GSnetwork_addresses.push(newGSAddress_);
+            GSnetwork_names.push(GASname);
         
     }
 
@@ -73,8 +77,8 @@ contract Gascoin {
         return User_addresses[i];
     }
     
-    function GSAddress(uint i) constant returns (address) {
-        return GSnetwork_addresses[i];
+    function GSAddress(uint i) constant returns (address,string) {
+        return (GSnetwork_addresses[i],GSnetwork_names[i]) ;
     }
 
     /* Gives the number of gas stations in our network */
@@ -97,17 +101,24 @@ contract Gascoin {
     
     /* Buy gas in a gas station*/
     function buyGas(uint256 _value, uint256 _priceGas, address _fromGS ) {
-       
-       
-       
+        GS_Active=false;
        value256=int256(_value);
         if (_fromGS == 0x0) throw;                               // Prevent transfer to 0x0 address. Use burn() instead
        if (balanceOfCoin[msg.sender] < _value) throw;           // Check if the sender has enough
        // if (balanceOfCoin[_to] + _value < balanceOfCoin[_to]) throw; // Check for overflows
+         for (uint i = 0; i < GSnetwork_addresses.length; i++) {
+         if (_fromGS==GSnetwork_addresses[i]){
+        
+             GS_Active=true;
+         }
+    }
+    
+    if (GS_Active==true){
         GasSold[_fromGS] += (_value)/_priceGas;
         balanceOfCoin[msg.sender] -= _value;                     // Subtract from the sender
         CreditIssued[_fromGS] -= value256;                     // Subtract from gasstation
-        
+         
+    }else{throw;}
     }
 
  /* Settlement (after one month period)*/
@@ -138,3 +149,4 @@ contract Gascoin {
     }
 
 }
+
