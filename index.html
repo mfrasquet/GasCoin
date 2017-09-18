@@ -6,8 +6,12 @@
   <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
 </head>
 <body class="container">
-  <h1>Landing Page GasCoin Dapp</h1>
+  <h1>Landing Page GasCoin Dapp</h1></br>
   <div >
+      <input type="text" placeholder="GS Address" id="NGS_address" />
+      <input type="text" placeholder="GS Name" id="NGS_name" />
+      <a href="#" onclick="RegisterNGS()" class="btn btn-primary">Register new Gas Station</a>
+    </br>
   <div class="table-responsive">
     <table class="table table-bordered">
       <thead>
@@ -41,16 +45,38 @@
           <td id="GS_gasSold-2"></td>
           <td id="GS_gascoin-2"></td>
         </tr>
+        <tr>
+            <td id="GS_name-3"></td>
+            <td id="GS_Address-3"></td>
+            <td id="GS_Credit-3"></td>
+            <td id="GS_gasSold-3"></td>
+            <td id="GS_gascoin-3"></td>
+          </tr>
+          <tr>
+              <td id="GS_name-4"></td>
+              <td id="GS_Address-4"></td>
+              <td id="GS_Credit-4"></td>
+              <td id="GS_gasSold-4"></td>
+              <td id="GS_gascoin-4"></td>
+            </tr>
+            <tr>
+                <td id="GS_name-5"></td>
+                <td id="GS_Address-5"></td>
+                <td id="GS_Credit-5"></td>
+                <td id="GS_gasSold-5"></td>
+                <td id="GS_gascoin-5"></td>
+              </tr>
       </tbody>
     </table>
   </div>
-  <input type="text" placeholder="GS Address" id="NGS_address" />
-  <input type="text" placeholder="GS Name" id="NGS_name" />
-  <a href="#" onclick="RegisterNGS()" class="btn btn-primary">Register new Gas Station</a>
-</br>
+ 
+<input type="text" placeholder="Credit Issuer Address" id="Issuer_address_form" />
 <input type="text" placeholder="User Address" id="User_address_form" />
 <input type="text" placeholder="Amount" id="Amount_credit_form" />
-  <a href="#" onclick="IssueCredit()" class="btn btn-primary">Issue Credit</a>
+  <a href="#" onclick="IssueCredit()" class="btn btn-primary">Issue Credit</a> </br>
+  <input type="text" placeholder="Buyer Address" id="Buyer_address_form" />
+  <input type="text" placeholder="GasCoin Amount" id="gascoin_amount_form" />
+    <a href="#" onclick="TradeGasCoin()" class="btn btn-primary">Trade GasCoin</a>
 </br>
 </div>
   <div>
@@ -80,9 +106,28 @@
           <td id="User_gas-2"></td>
 
         </tr>
+        <tr>
+            <td id="User_Address-3"></td>
+            <td id="User_Credit-3"></td>
+            <td id="User_gas-3"></td>
+  
+          </tr>
+          <tr>
+              <td id="User_Address-4"></td>
+              <td id="User_Credit-4"></td>
+              <td id="User_gas-4"></td>
+    
+            </tr>
+            <tr>
+                <td id="User_Address-5"></td>
+                <td id="User_Credit-5"></td>
+                <td id="User_gas-5"></td>
+      
+              </tr>
       </tbody>
     </table>
   </div>
+  <input type="text" placeholder="Address from user" id="Address_fromUser_form" />
   <input type="text" placeholder="value" id="Gas_amount_form" />
   <input type="text" placeholder="price" id="Price_form" />
   <input type="text" placeholder="address of GS" id="Address_form" />
