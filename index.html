@@ -7,36 +7,87 @@
 </head>
 <body class="container">
   <h1>Landing Page GasCoin Dapp</h1>
+  <div >
   <div class="table-responsive">
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Candidate</th>
-          <th>Votes</th>
+          <th>Gas Station name</th>
+          <th>Address</th>
+          <th>Credit Issued</th>
+          <th>Gas Sold</th>
+          <th>Gascoin balance</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>miguel</td>
-          <td id="candidate-1"></td>
+          <td id="GS_name-0"></td>
+          <td id="GS_Address-0"></td>
+          <td id="GS_Credit-0"></td>
+          <td id="GS_gasSold-0"></td>
+          <td id="GS_gascoin-0"></td>
         </tr>
         <tr>
-          <td>zaira</td>
-          <td id="candidate-2"></td>
+          <td id="GS_name-1"></td>
+          <td id="GS_Address-1"></td>
+          <td id="GS_Credit-1"></td>
+          <td id="GS_gasSold-1"></td>
+          <td id="GS_gascoin-1"></td>
         </tr>
         <tr>
-          <td>Jose</td>
-          <td id="candidate-3"></td>
+          <td id="GS_name-2"></td>
+          <td id="GS_Address-2"></td>
+          <td id="GS_Credit-2"></td>
+          <td id="GS_gasSold-2"></td>
+          <td id="GS_gascoin-2"></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <input type="text" id="candidate" />
-  <a href="#" onclick="voteForCandidate()" class="btn btn-primary">Vote</a>
-
-  <input type="text" id="NGS_address" />
+  <input type="text" placeholder="GS Address" id="NGS_address" />
+  <input type="text" placeholder="GS Name" id="NGS_name" />
   <a href="#" onclick="RegisterNGS()" class="btn btn-primary">Register new Gas Station</a>
+</br>
+<input type="text" placeholder="User Address" id="User_address_form" />
+<input type="text" placeholder="Amount" id="Amount_credit_form" />
+  <a href="#" onclick="IssueCredit()" class="btn btn-primary">Issue Credit</a>
+</br>
+</div>
+  <div>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>User Address</th>
+          <th>Credit Balance</th>
+          <th>Gas purchased</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>        
+          <td id="User_Address-0"></td>
+          <td id="User_Credit-0"></td>
+          <td id="User_gas-0"></td>
+        </tr>
+        <tr>
+          <td id="User_Address-1"></td>
+          <td id="User_Credit-1"></td>
+          <td id="User_gas-1"></td>
+        </tr>
+        <tr>
+          <td id="User_Address-2"></td>
+          <td id="User_Credit-2"></td>
+          <td id="User_gas-2"></td>
 
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <input type="text" placeholder="value" id="Gas_amount_form" />
+  <input type="text" placeholder="price" id="Price_form" />
+  <input type="text" placeholder="address of GS" id="Address_form" />
+  <a href="#" onclick="BuyGas()" class="btn btn-primary">Buy Gas</a>
+  </div>
 </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
